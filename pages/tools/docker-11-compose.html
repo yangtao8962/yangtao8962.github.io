@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Docker Compose | Tao&#39;s Docs</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="Just playing around">
+    
+    <link rel="preload" href="/assets/css/0.styles.e4d8b86b.css" as="style"><link rel="preload" href="/assets/js/app.eb84dcc4.js" as="script"><link rel="preload" href="/assets/js/2.3438093d.js" as="script"><link rel="preload" href="/assets/js/30.a6742e17.js" as="script"><link rel="prefetch" href="/assets/js/10.5c85d835.js"><link rel="prefetch" href="/assets/js/11.4e188f36.js"><link rel="prefetch" href="/assets/js/12.63bafc7d.js"><link rel="prefetch" href="/assets/js/13.b4785702.js"><link rel="prefetch" href="/assets/js/14.f812d107.js"><link rel="prefetch" href="/assets/js/15.9292f8a4.js"><link rel="prefetch" href="/assets/js/16.c1fe50c7.js"><link rel="prefetch" href="/assets/js/17.b8c322d0.js"><link rel="prefetch" href="/assets/js/18.9d5b497f.js"><link rel="prefetch" href="/assets/js/19.02d9dbde.js"><link rel="prefetch" href="/assets/js/20.d41d055a.js"><link rel="prefetch" href="/assets/js/21.e546c67d.js"><link rel="prefetch" href="/assets/js/22.88d5c441.js"><link rel="prefetch" href="/assets/js/23.52b19eba.js"><link rel="prefetch" href="/assets/js/24.7cfd8490.js"><link rel="prefetch" href="/assets/js/25.b634aa65.js"><link rel="prefetch" href="/assets/js/26.e6adb331.js"><link rel="prefetch" href="/assets/js/27.0d5b7487.js"><link rel="prefetch" href="/assets/js/28.38896ef3.js"><link rel="prefetch" href="/assets/js/29.0d8a4197.js"><link rel="prefetch" href="/assets/js/3.1d9e5fa9.js"><link rel="prefetch" href="/assets/js/31.abc42197.js"><link rel="prefetch" href="/assets/js/32.a0586ff7.js"><link rel="prefetch" href="/assets/js/33.769cdb65.js"><link rel="prefetch" href="/assets/js/34.0ed6a7b5.js"><link rel="prefetch" href="/assets/js/35.05027a7e.js"><link rel="prefetch" href="/assets/js/36.9fe4cab0.js"><link rel="prefetch" href="/assets/js/37.f55cbcbb.js"><link rel="prefetch" href="/assets/js/38.9917a028.js"><link rel="prefetch" href="/assets/js/39.8ca4953b.js"><link rel="prefetch" href="/assets/js/4.b7d0708f.js"><link rel="prefetch" href="/assets/js/40.be762125.js"><link rel="prefetch" href="/assets/js/41.26af46d4.js"><link rel="prefetch" href="/assets/js/42.ee5b090a.js"><link rel="prefetch" href="/assets/js/43.336503df.js"><link rel="prefetch" href="/assets/js/44.dc926be6.js"><link rel="prefetch" href="/assets/js/45.6854943b.js"><link rel="prefetch" href="/assets/js/46.8e0d341a.js"><link rel="prefetch" href="/assets/js/47.f2e48103.js"><link rel="prefetch" href="/assets/js/48.72715128.js"><link rel="prefetch" href="/assets/js/49.44639b54.js"><link rel="prefetch" href="/assets/js/5.9e2f4ca7.js"><link rel="prefetch" href="/assets/js/50.6bcef58f.js"><link rel="prefetch" href="/assets/js/51.a78f9b9f.js"><link rel="prefetch" href="/assets/js/52.7fa6c2a6.js"><link rel="prefetch" href="/assets/js/53.72d89890.js"><link rel="prefetch" href="/assets/js/54.9ee5a5d0.js"><link rel="prefetch" href="/assets/js/55.d39bc266.js"><link rel="prefetch" href="/assets/js/56.57eec7c3.js"><link rel="prefetch" href="/assets/js/57.759b950d.js"><link rel="prefetch" href="/assets/js/58.dba62ed6.js"><link rel="prefetch" href="/assets/js/59.b381d76a.js"><link rel="prefetch" href="/assets/js/6.c7b54f12.js"><link rel="prefetch" href="/assets/js/60.47666c3f.js"><link rel="prefetch" href="/assets/js/61.5f20b3e7.js"><link rel="prefetch" href="/assets/js/62.edaf0b01.js"><link rel="prefetch" href="/assets/js/63.101ed616.js"><link rel="prefetch" href="/assets/js/64.e81ca07d.js"><link rel="prefetch" href="/assets/js/65.eef3caa6.js"><link rel="prefetch" href="/assets/js/66.47e25e41.js"><link rel="prefetch" href="/assets/js/67.f61b31d4.js"><link rel="prefetch" href="/assets/js/68.d58f06f4.js"><link rel="prefetch" href="/assets/js/69.de63cbe4.js"><link rel="prefetch" href="/assets/js/7.f39602d3.js"><link rel="prefetch" href="/assets/js/70.e55a4ab9.js"><link rel="prefetch" href="/assets/js/71.340f0f17.js"><link rel="prefetch" href="/assets/js/72.efc7adcb.js"><link rel="prefetch" href="/assets/js/8.f49bd070.js"><link rel="prefetch" href="/assets/js/9.9ddd43a0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e4d8b86b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Tao's Docs</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="分类" class="dropdown-title"><span class="title">分类</span> <span class="arrow down"></span></button> <button type="button" aria-label="分类" class="mobile-dropdown-title"><span class="title">分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/back-end/introduction.html" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/pages/database/introduction.html" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/pages/tools/introduction.html" class="nav-link">
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/pages/dev-env/introduction.html" class="nav-link">
+  环境搭建
+</a></li></ul></div></div><div class="nav-item"><a href="https://yangtao.live/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客主页
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="分类" class="dropdown-title"><span class="title">分类</span> <span class="arrow down"></span></button> <button type="button" aria-label="分类" class="mobile-dropdown-title"><span class="title">分类</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/back-end/introduction.html" class="nav-link">
+  后端
+</a></li><li class="dropdown-item"><!----> <a href="/pages/database/introduction.html" class="nav-link">
+  数据库
+</a></li><li class="dropdown-item"><!----> <a href="/pages/tools/introduction.html" class="nav-link">
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/pages/dev-env/introduction.html" class="nav-link">
+  环境搭建
+</a></li></ul></div></div><div class="nav-item"><a href="https://yangtao.live/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  博客主页
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>页面介绍</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Linux</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Git</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Maven</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Rabbit MQ</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Docker</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/tools/docker-1-introduction.html" class="sidebar-link">简介</a></li><li><a href="/pages/tools/docker-2-install.html" class="sidebar-link">安装</a></li><li><a href="/pages/tools/docker-3-framework.html" class="sidebar-link">架构</a></li><li><a href="/pages/tools/docker-4-configuration.html" class="sidebar-link">配置</a></li><li><a href="/pages/tools/docker-5-commands.html" class="sidebar-link">常用命令</a></li><li><a href="/pages/tools/docker-6-image.html" class="sidebar-link">镜像原理</a></li><li><a href="/pages/tools/docker-7-network.html" class="sidebar-link">网络通信</a></li><li><a href="/pages/tools/docker-8-volume.html" class="sidebar-link">数据卷</a></li><li><a href="/pages/tools/docker-9-software.html" class="sidebar-link">常用软件</a></li><li><a href="/pages/tools/docker-10-dockerfile.html" class="sidebar-link">dockerfile</a></li><li><a href="/pages/tools/docker-11-compose.html" aria-current="page" class="active sidebar-link">docker-compose</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/tools/docker-11-compose.html#docker-compose" class="sidebar-link">Docker Compose</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/tools/docker-11-compose.html#简介" class="sidebar-link">简介</a></li><li class="sidebar-sub-header"><a href="/pages/tools/docker-11-compose.html#核心概念" class="sidebar-link">核心概念</a></li><li class="sidebar-sub-header"><a href="/pages/tools/docker-11-compose.html#安装与卸载" class="sidebar-link">安装与卸载</a></li><li class="sidebar-sub-header"><a href="/pages/tools/docker-11-compose.html#模板文件和模板指令" class="sidebar-link">模板文件和模板指令</a></li><li class="sidebar-sub-header"><a href="/pages/tools/docker-11-compose.html#模板实例" class="sidebar-link">模板实例</a></li><li class="sidebar-sub-header"><a href="/pages/tools/docker-11-compose.html#docker-compose指令" class="sidebar-link">docker-compose指令</a></li></ul></li></ul></li><li><a href="/pages/tools/docker-12-portainer.html" class="sidebar-link">可视化</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="docker-compose"><a href="#docker-compose" class="header-anchor">#</a> Docker Compose</h2> <h3 id="简介"><a href="#简介" class="header-anchor">#</a> 简介</h3> <div class="language- extra-class"><pre><code>	`Compose` 项目是 Docker 官方的开源项目，负责`实现对Docker容器集群的快速编排`。定义和运行多个 Docker 容器（Defining and running multi-container Docker applications）
+</code></pre></div><p>​		 在日常工作中，经常会碰到需要多个容器相互配合来完成某项任务的情况。例如要实现一个 Web 项目，除了 Web 服务容器本身，往往还需要再加上后端的数据库服务容器、redis服务器，甚至还包括负载均衡容器等。<code>Compose</code> 恰好满足了这样的需求。它允许用户通过一个单独的 <code>docker-compose.yml</code> 模板文件（YAML 格式）来定义一组相关联的应用容器为一个项目（project）。</p> <h3 id="核心概念"><a href="#核心概念" class="header-anchor">#</a> 核心概念</h3> <p><code>服务（service）</code></p> <p>一个用用的容器，实际上还可以包含若干运行相同镜像容器实例。</p> <p><code>项目（project）</code></p> <p>由一组关联的应用容器组成的一个完整业务单元，在<code>docker-compose.yml</code>中定义</p> <h3 id="安装与卸载"><a href="#安装与卸载" class="header-anchor">#</a> 安装与卸载</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">curl</span> -L https://github.com/docker/compose/releases/download/1.25.5/docker-compose-<span class="token variable"><span class="token variable">`</span><span class="token function">uname</span> -s<span class="token variable">`</span></span>-<span class="token variable"><span class="token variable">`</span><span class="token function">uname</span> -m<span class="token variable">`</span></span> <span class="token operator">&gt;</span> /usr/local/bin/docker-compose
+<span class="token function">chmod</span> +x /usr/local/bin/docker-compose
+<span class="token function">docker-compose</span> -v 		<span class="token comment"># 检测是否安装成功</span>
+<span class="token function">rm</span> /usr/local/bin/docker-compose		<span class="token comment"># 卸载</span>
+</code></pre></div><h3 id="模板文件和模板指令"><a href="#模板文件和模板指令" class="header-anchor">#</a> 模板文件和模板指令</h3> <p>模板文件是使用 <code>Compose</code> 的核心，涉及到的指令关键字也比较多。但大家不用担心，这里面大部分指令跟 <code>docker run</code> 相关参数的含义都是类似的。</p> <p>默认的模板文件名称为 <code>docker-compose.yml</code>，格式为 YAML 格式。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">&quot;3&quot;</span>
+
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">webapp</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> examples/web
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">&quot;80:80&quot;</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">&quot;/data&quot;</span>
+</code></pre></div><p>注意每个服务都必须通过 <code>image</code> 指令指定镜像或 <code>build</code> 指令（需要 Dockerfile）等来自动构建生成镜像。</p> <p>如果使用 <code>build</code> 指令，在 <code>Dockerfile</code> 中设置的选项(例如：<code>CMD</code>, <code>EXPOSE</code>, <code>VOLUME</code>, <code>ENV</code> 等) 将会自动被获取，无需在 <code>docker-compose.yml</code> 中重复设置。</p> <p>下面分别介绍各个指令的用法。</p> <h5 id="build"><a href="#build" class="header-anchor">#</a> <code>build</code></h5> <p>原有步骤：Dockerfile -&gt; 打包镜像 -&gt; docker compose，可以使用build将这个步骤省略</p> <p>指定 <code>Dockerfile</code> 所在文件夹的路径（可以是绝对路径，或者相对 docker-compose.yml 文件的路径）。 <code>Compose</code> 将会利用它自动构建这个镜像，然后使用这个镜像。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+
+  <span class="token key atrule">webapp</span><span class="token punctuation">:</span>
+    <span class="token key atrule">build</span><span class="token punctuation">:</span> ./dir
+</code></pre></div><p>你也可以使用 <code>context</code> 指令指定 <code>Dockerfile</code> 所在文件夹的路径。</p> <p>使用 <code>dockerfile</code> 指令指定 <code>Dockerfile</code> 文件名。</p> <p>使用 <code>arg</code> 指令指定构建镜像时的变量。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3'</span>
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+
+  <span class="token key atrule">webapp</span><span class="token punctuation">:</span>
+    <span class="token key atrule">build</span><span class="token punctuation">:</span>
+      <span class="token key atrule">context</span><span class="token punctuation">:</span> ./dir
+      <span class="token key atrule">dockerfile</span><span class="token punctuation">:</span> Dockerfile<span class="token punctuation">-</span>alternate
+      <span class="token key atrule">args</span><span class="token punctuation">:</span>
+        <span class="token key atrule">buildno</span><span class="token punctuation">:</span> <span class="token number">1</span>
+</code></pre></div><h5 id="command"><a href="#command" class="header-anchor">#</a> <code>command</code></h5> <p>覆盖容器启动后默认执行的命令。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">command</span><span class="token punctuation">:</span> echo &quot;hello world&quot;
+</code></pre></div><h5 id="container-name"><a href="#container-name" class="header-anchor">#</a> <code>container_name</code></h5> <p>指定容器名称。默认将会使用 <code>项目名称_服务名称_序号</code> 这样的格式。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">container_name</span><span class="token punctuation">:</span> docker<span class="token punctuation">-</span>web<span class="token punctuation">-</span>container
+</code></pre></div><blockquote><p>注意: 指定容器名称后，该服务将无法进行扩展（scale），因为 Docker 不允许多个容器具有相同的名称。</p></blockquote> <h5 id="depends-on"><a href="#depends-on" class="header-anchor">#</a> <code>depends_on</code></h5> <p>解决容器的依赖、启动先后的问题。以下例子中会先启动 <code>redis</code> <code>db</code> 再启动 <code>web</code></p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'3'</span>
+
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">web</span><span class="token punctuation">:</span>
+    <span class="token key atrule">build</span><span class="token punctuation">:</span> .
+    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> db
+      <span class="token punctuation">-</span> redis
+
+  <span class="token key atrule">redis</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> redis
+
+  <span class="token key atrule">db</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> postgres
+</code></pre></div><blockquote><p>注意：<code>web</code> 服务不会等待 <code>redis</code> <code>db</code> 「完全启动」之后才启动。</p></blockquote> <h5 id="env-file"><a href="#env-file" class="header-anchor">#</a> <code>env_file</code></h5> <p>从文件中获取环境变量，可以为单独的文件路径或列表。</p> <p>如果通过 <code>docker-compose -f FILE</code> 方式来指定 Compose 模板文件，则 <code>env_file</code> 中变量的路径会基于模板文件路径。</p> <p>如果有变量名称与 <code>environment</code> 指令冲突，则按照惯例，以后者为准。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>env_file: .envenv_file:  - ./common.env  - ./apps/web.env  - /opt/secrets.env
+</code></pre></div><p>环境变量文件中每一行必须符合格式，支持 <code>#</code> 开头的注释行。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># common.env: Set development environmentPROG_ENV=development</span>
+</code></pre></div><h5 id="environment"><a href="#environment" class="header-anchor">#</a> <code>environment</code></h5> <p>设置环境变量。你可以使用数组或字典两种格式。</p> <p>只给定名称的变量会自动获取运行 Compose 主机上对应变量的值，可以用来防止泄露不必要的数据。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">environment</span><span class="token punctuation">:</span>  <span class="token key atrule">RACK_ENV</span><span class="token punctuation">:</span> <span class="token key atrule">development  SESSION_SECRET:environment</span><span class="token punctuation">:</span>  <span class="token punctuation">-</span> RACK_ENV=development  <span class="token punctuation">-</span> SESSION_SECRET
+</code></pre></div><p>如果变量名称或者值中用到 <code>true|false，yes|no</code> 等表达 <a href="https://yaml.org/type/bool.html" target="_blank" rel="noopener noreferrer">布尔<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 含义的词汇，最好放到引号里，避免 YAML 自动解析某些内容为对应的布尔语义。这些特定词汇，包括</p> <div class="language-bash extra-class"><pre class="language-bash"><code>y<span class="token operator">|</span>Y<span class="token operator">|</span><span class="token function">yes</span><span class="token operator">|</span>Yes<span class="token operator">|</span>YES<span class="token operator">|</span>n<span class="token operator">|</span>N<span class="token operator">|</span>no<span class="token operator">|</span>No<span class="token operator">|</span>NO<span class="token operator">|</span><span class="token boolean">true</span><span class="token operator">|</span>True<span class="token operator">|</span>TRUE<span class="token operator">|</span><span class="token boolean">false</span><span class="token operator">|</span>False<span class="token operator">|</span>FALSE<span class="token operator">|</span>on<span class="token operator">|</span>On<span class="token operator">|</span>ON<span class="token operator">|</span>off<span class="token operator">|</span>Off<span class="token operator">|</span>OFF
+</code></pre></div><h5 id="healthcheck"><a href="#healthcheck" class="header-anchor">#</a> <code>healthcheck</code></h5> <p>心跳检查，通过命令检查容器是否健康运行。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">healthcheck</span><span class="token punctuation">:</span>  <span class="token key atrule">test</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;CMD&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;curl&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;-f&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;http://localhost&quot;</span><span class="token punctuation">]</span>  interval<span class="token punctuation">:</span> <span class="token key atrule">1m30s  timeout</span><span class="token punctuation">:</span> <span class="token key atrule">10s  retries</span><span class="token punctuation">:</span> <span class="token number">3</span>
+</code></pre></div><h5 id="image"><a href="#image" class="header-anchor">#</a> <code>image</code></h5> <p>指定为镜像名称或镜像 ID。如果镜像在本地不存在，<code>Compose</code> 将会尝试拉取这个镜像。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">image</span><span class="token punctuation">:</span> <span class="token key atrule">ubuntuimage</span><span class="token punctuation">:</span> <span class="token key atrule">orchardup/postgresqlimage</span><span class="token punctuation">:</span> a4bc65fd
+</code></pre></div><h5 id="networks"><a href="#networks" class="header-anchor">#</a> <code>networks</code></h5> <p>配置容器连接的网络。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> &quot;3&quot;services<span class="token punctuation">:</span>  <span class="token key atrule">some-service</span><span class="token punctuation">:</span>    <span class="token key atrule">networks</span><span class="token punctuation">:</span>     <span class="token punctuation">-</span> <span class="token key atrule">some-network     - other-networknetworks</span><span class="token punctuation">:</span>  <span class="token key atrule">some-network</span><span class="token punctuation">:</span>  <span class="token key atrule">other-network</span><span class="token punctuation">:</span>
+</code></pre></div><h5 id="ports"><a href="#ports" class="header-anchor">#</a> <code>ports</code></h5> <p>暴露端口信息。</p> <p>使用宿主端口：容器端口 <code>(HOST:CONTAINER)</code> 格式，或者仅仅指定容器的端口（宿主将会随机选择端口）都可以。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">ports</span><span class="token punctuation">:</span> <span class="token punctuation">-</span> &quot;3000&quot; <span class="token punctuation">-</span> &quot;8000<span class="token punctuation">:</span>8000&quot; <span class="token punctuation">-</span> &quot;49100<span class="token punctuation">:</span>22&quot; <span class="token punctuation">-</span> <span class="token string">&quot;127.0.0.1:8001:8001&quot;</span>
+</code></pre></div><p><em>注意：当使用 <code>HOST:CONTAINER</code> 格式来映射端口时，如果你使用的容器端口小于 60 并且没放到引号里，可能会得到错误结果，因为 <code>YAML</code> 会自动解析 <code>xx:yy</code> 这种数字格式为 60 进制。为避免出现这种问题，建议数字串都采用引号包括起来的字符串格式。</em></p> <h5 id="sysctls"><a href="#sysctls" class="header-anchor">#</a> <code>sysctls</code></h5> <p>配置容器内核参数。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">sysctls</span><span class="token punctuation">:</span>
+  <span class="token key atrule">net.core.somaxconn</span><span class="token punctuation">:</span> <span class="token number">1024</span>
+  <span class="token key atrule">net.ipv4.tcp_syncookies</span><span class="token punctuation">:</span> <span class="token number">0</span>
+
+<span class="token key atrule">sysctls</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> net.core.somaxconn=1024
+  <span class="token punctuation">-</span> net.ipv4.tcp_syncookies=0
+</code></pre></div><h5 id="ulimits"><a href="#ulimits" class="header-anchor">#</a> <code>ulimits</code></h5> <p>指定容器的 ulimits 限制值。</p> <p>例如，指定最大进程数为 65535，指定文件句柄数为 20000（软限制，应用可以随时修改，不能超过硬限制） 和 40000（系统硬限制，只能 root 用户提高）。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code>  <span class="token key atrule">ulimits</span><span class="token punctuation">:</span>
+    <span class="token key atrule">nproc</span><span class="token punctuation">:</span> <span class="token number">65535</span>
+    <span class="token key atrule">nofile</span><span class="token punctuation">:</span>
+      <span class="token key atrule">soft</span><span class="token punctuation">:</span> <span class="token number">20000</span>
+      <span class="token key atrule">hard</span><span class="token punctuation">:</span> <span class="token number">40000</span>
+</code></pre></div><h5 id="volumes"><a href="#volumes" class="header-anchor">#</a> <code>volumes</code></h5> <p>数据卷所挂载路径设置。可以设置为宿主机路径(<code>HOST:CONTAINER</code>)或者数据卷名称(<code>VOLUME:CONTAINER</code>)，并且可以设置访问模式 （<code>HOST:CONTAINER:ro</code>）。</p> <p>该指令中路径支持相对路径。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+ <span class="token punctuation">-</span> /var/lib/mysql
+ <span class="token punctuation">-</span> cache/<span class="token punctuation">:</span>/tmp/cache
+ <span class="token punctuation">-</span> ~/configs<span class="token punctuation">:</span>/etc/configs/<span class="token punctuation">:</span>ro
+</code></pre></div><p>如果路径为数据卷名称，必须在文件中配置数据卷。</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">&quot;3&quot;</span>
+
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">my_src</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> mysql<span class="token punctuation">:</span><span class="token number">8.0</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> mysql_data<span class="token punctuation">:</span>/var/lib/mysql
+
+<span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+  <span class="token key atrule">mysql_data</span><span class="token punctuation">:</span>
+</code></pre></div><h3 id="模板实例"><a href="#模板实例" class="header-anchor">#</a> 模板实例</h3> <ol><li>创建一个docker-compose.yml</li></ol> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">&quot;3.2&quot;</span>
+
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+
+  <span class="token key atrule">demo</span><span class="token punctuation">:</span>
+    <span class="token key atrule">build</span><span class="token punctuation">:</span>
+      <span class="token key atrule">context</span><span class="token punctuation">:</span> demo   <span class="token comment"># 指定上下文目录，即Dockerfile所在目录，绝对路径相对路径都行</span>
+      <span class="token key atrule">dockerfile</span><span class="token punctuation">:</span> Dockerfile    <span class="token comment"># 指定Dockerfile</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> demo    <span class="token comment"># build完成后的容器名</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">&quot;8081:8081&quot;</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> hello
+    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> tomcat01
+
+  <span class="token key atrule">tomcat01</span><span class="token punctuation">:</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> tomcat01    <span class="token comment"># 相当于run时的 --name</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> tomcat<span class="token punctuation">:</span>8.5.68<span class="token punctuation">-</span>jdk8   <span class="token comment"># 相当于run时的 image</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>                      <span class="token comment"># 相当于run时的 -p</span>
+      <span class="token punctuation">-</span> <span class="token string">&quot;8081:8080&quot;</span>     <span class="token comment"># 可以写多个</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>                    <span class="token comment"># 相当于run时的 -v</span>
+<span class="token comment">#     - /var/lib/docker/volumes/tomcat8_webapps:/usr/local/tomcat/webapps   # 自定义映射路径</span>
+      <span class="token punctuation">-</span> tomcat8_webapps01<span class="token punctuation">:</span>/usr/local/tomcat/webapps     <span class="token comment"># 自动映射，但必须声明</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>                   <span class="token comment"># 相当于run时的 --network， 当前服务使用哪个桥</span>
+      <span class="token punctuation">-</span> hello
+    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> tomcat02      <span class="token comment"># 设置tomcat01依赖于 tomcat02，这里的tomcat02是服务名</span>
+
+  <span class="token key atrule">tomcat02</span><span class="token punctuation">:</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> tomcat02
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> tomcat<span class="token punctuation">:</span>8.5.68<span class="token punctuation">-</span>jdk8
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">&quot;8082:8080&quot;</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> tomcat8_webapps02<span class="token punctuation">:</span>/usr/local/tomcat/webapps
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> hello
+
+  <span class="token key atrule">mysql</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> mysql<span class="token punctuation">:</span>5.7.34
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> mysql
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">&quot;3307:3306&quot;</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> mysqldata<span class="token punctuation">:</span>/var/lib/mysql
+      <span class="token punctuation">-</span> mysqlconf<span class="token punctuation">:</span>/etc/mysql
+<span class="token comment">#    environment:</span>
+<span class="token comment">#      - MYSQL_ROOT_PASSWORD=root    # 这种相对敏感的数据，可以使用env_file代替</span>
+    <span class="token key atrule">env_file</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> mysql.env		<span class="token comment"># 在host主机中的位置可以是相对路径，也可以是绝对路径</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> hello
+
+  <span class="token key atrule">redis</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> redis<span class="token punctuation">:</span>5.0.10
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> redis
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">&quot;6379:6379&quot;</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> redisdata<span class="token punctuation">:</span>/data
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token string">&quot;redis-server --appendonly yes&quot;</span>    <span class="token comment"># 相当于run镜像之后覆盖容器内默认命令</span>
+
+<span class="token key atrule">volumes</span><span class="token punctuation">:</span>  <span class="token comment"># 声明上面服务所使用的自动创建的卷名</span>
+  <span class="token key atrule">tomcat8_webapps01</span><span class="token punctuation">:</span>    <span class="token comment"># 声明指令的卷名，自动创建卷名，但是会自动加入项目名</span>
+    <span class="token key atrule">external</span><span class="token punctuation">:</span>   <span class="token comment"># 是否使用自定义的卷名，如果为true，就必须先手动创建卷</span>
+      false
+  <span class="token key atrule">tomcat8_webapps02</span><span class="token punctuation">:</span>
+    <span class="token key atrule">external</span><span class="token punctuation">:</span>
+      <span class="token boolean important">false</span>
+  <span class="token key atrule">mysqldata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">mysqlconf</span><span class="token punctuation">:</span>
+  <span class="token key atrule">redisdata</span><span class="token punctuation">:</span>
+
+<span class="token key atrule">networks</span><span class="token punctuation">:</span>   <span class="token comment"># 定义服务用到的桥</span>
+  <span class="token key atrule">hello</span><span class="token punctuation">:</span>    <span class="token comment"># 定义上面的服务用到的的网桥名称，默认创建是bridge</span>
+    <span class="token key atrule">external</span><span class="token punctuation">:</span>     <span class="token comment"># 如果为true，同样是需要手动创建</span>
+      false
+</code></pre></div><ol start="2"><li>运行docker-compose</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker-compose</span> up <span class="token comment">#启动，必须保证当前目录下由配置文件docker-compose.yml</span>
+</code></pre></div><h3 id="docker-compose指令"><a href="#docker-compose指令" class="header-anchor">#</a> docker-compose指令</h3> <p>注意区分指令和模板指令，模板指令是在docker-compose.yml中的，而<code>指令是对docker-compose.yml进行操作的</code></p> <h5 id="命令选项"><a href="#命令选项" class="header-anchor">#</a> <code>命令选项</code></h5> <ul><li><code>-f, --file FILE</code> 指定使用的 Compose 模板文件，默认为 <code>docker-compose.yml</code>，可以多次指定。</li> <li><code>-p, --project-name NAME</code> 指定项目名称，默认将使用所在目录名称作为项目名。</li> <li><code>--x-networking</code> 使用 Docker 的可拔插网络后端特性</li> <li><code>--x-network-driver DRIVER</code> 指定网络后端的驱动，默认为 <code>bridge</code></li> <li><code>--verbose</code> 输出更多调试信息。</li> <li><code>-v, --version</code> 打印版本并退出。</li></ul> <h5 id="帮助指令"><a href="#帮助指令" class="header-anchor">#</a> <code>帮助指令</code></h5> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker-compose</span>
+</code></pre></div><h5 id="up"><a href="#up" class="header-anchor">#</a> <code>up</code></h5> <p>启动项目</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker-compose</span> up <span class="token punctuation">[</span>options<span class="token punctuation">]</span> <span class="token punctuation">[</span>SERVICE<span class="token punctuation">..</span>.<span class="token punctuation">]</span>	-f：当yml文件名不为docker-compose.yml时，可以添加-f指定yml文件	-d：后台运行所有容器docker-compose up -f XXX-compose.yml -d
+</code></pre></div><h5 id="down"><a href="#down" class="header-anchor">#</a> <code>down</code></h5> <ul><li>此命令将会停止 <code>up</code> 命令所启动的容器，并移除网络</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker-compose</span> down
+</code></pre></div><h5 id="exec"><a href="#exec" class="header-anchor">#</a> <code>exec</code></h5> <ul><li>进入指定的容器。</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker-compose</span> <span class="token builtin class-name">exec</span> -it <span class="token punctuation">[</span>serviceId<span class="token punctuation">]</span> bashdocker-compose <span class="token builtin class-name">exec</span> -it tomcat01 <span class="token function">bash</span>
+</code></pre></div><h5 id="ps"><a href="#ps" class="header-anchor">#</a> <code>ps</code></h5> <p>列出项目中目前的所有容器。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker-compose</span> <span class="token function">ps</span> <span class="token punctuation">[</span>options<span class="token punctuation">]</span> <span class="token punctuation">[</span>serviceId<span class="token punctuation">]</span>	-q：只打印容器iddocker-compose psdocker-compose <span class="token function">ps</span> -q
+</code></pre></div><h5 id="restart"><a href="#restart" class="header-anchor">#</a> <code>restart</code></h5> <p>重启项目中的服务</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker-compose</span> restart <span class="token punctuation">[</span>options<span class="token punctuation">]</span> <span class="token punctuation">[</span>serviceId<span class="token punctuation">]</span>	-t：指定重启前停止容器的超时时间（默认10s）docker-compose restart -t 20docker-compose restart tomcat01
+</code></pre></div><h5 id="rm"><a href="#rm" class="header-anchor">#</a> <code>rm</code></h5> <p>删除所有（停止状态的）服务容器。推荐先执行 <code>docker-compose stop</code> 命令来停止容器。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker-compose</span> <span class="token function">rm</span> <span class="token punctuation">[</span>options<span class="token punctuation">]</span> <span class="token punctuation">[</span>serviceId<span class="token punctuation">]</span>	-f：强制删除，包括非停止状态的容器，一般不使用	-v：删除容器所挂在的数据卷docker-compose <span class="token function">rm</span> tomcat01docker-compose <span class="token function">rm</span> -f -v tomcat01
+</code></pre></div><h5 id="start"><a href="#start" class="header-anchor">#</a> <code>start</code></h5> <p>启动已经存在的服务容器。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker-compose</span> start <span class="token punctuation">[</span>serviceId<span class="token punctuation">]</span>docker-compose start tomcat01
+</code></pre></div><h5 id="stop"><a href="#stop" class="header-anchor">#</a> <code>stop</code></h5> <p>停止已经处于运行状态的容器，但不删除它。通过 <code>docker-compose start</code> 可以再次启动这些容器。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker-compose</span> stop <span class="token punctuation">[</span>options<span class="token punctuation">]</span> <span class="token punctuation">[</span>serviceId<span class="token punctuation">]</span>	-t：停止容器时候的超时时间（默认10s）docker-compose start -t <span class="token number">20</span> tomcat01
+</code></pre></div><h5 id="top"><a href="#top" class="header-anchor">#</a> <code>top</code></h5> <p>查看各个服务容器内运行的进程。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker-compose</span> <span class="token function">top</span>
+</code></pre></div><h5 id="pause"><a href="#pause" class="header-anchor">#</a> <code>pause</code></h5> <p>暂停某个服务</p> <div class="language-bash extra-class"><pre class="language-bash"><code>
+<span class="token function">docker-compose</span> pause tomcat01
+</code></pre></div><h5 id="unpause"><a href="#unpause" class="header-anchor">#</a> <code>unpause</code></h5> <p>恢复处于暂停状态中的服务。</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker-compose</span> unpause <span class="token punctuation">[</span>serviceId<span class="token punctuation">]</span>
+
+<span class="token function">docker-compose</span> unpause tomcat01
+</code></pre></div><p><code>logs</code></p> <p>查看日志，可精确到某个服务</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker-compose</span> logs <span class="token punctuation">[</span>serviceId<span class="token punctuation">]</span>
+
+<span class="token function">docker-compose</span> logs tomcat01
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/pages/tools/docker-10-dockerfile.html" class="prev">
+        dockerfile
+      </a></span> <span class="next"><a href="/pages/tools/docker-12-portainer.html">
+        可视化
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.eb84dcc4.js" defer></script><script src="/assets/js/2.3438093d.js" defer></script><script src="/assets/js/30.a6742e17.js" defer></script>
+  </body>
+</html>
